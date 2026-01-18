@@ -1,19 +1,24 @@
-Apr 10, 2025 6:51:21 AM reposense.system.LogsManager addFileHandler
+Jan 18, 2026 12:09:03 PM reposense.system.LogsManager addFileHandler
 INFO: Log temp folder has been successfully created
-Apr 10, 2025 6:51:22 AM reposense.parser.ArgsParser parse
+Jan 18, 2026 12:09:03 PM reposense.parser.ArgsParser parse
 INFO: Config path not provided, using the config folder as default.
-Apr 10, 2025 6:51:22 AM reposense.parser.CsvParser validateHeader
+Jan 18, 2026 12:09:03 PM reposense.parser.ReportConfigYamlParser parse
+INFO: Parsing report-config.yaml file...
+Jan 18, 2026 12:09:04 PM reposense.parser.ArgsParser addReportConfigToBuilder
+WARNING: Error parsing report-config.yaml: /home/runner/work/publish-RepoSense/publish-RepoSense/config/report-config.yaml (No such file or directory)
+/home/runner/work/publish-RepoSense/publish-RepoSense/config/report-config.yaml Ignoring the report config provided.
+Jan 18, 2026 12:09:04 PM reposense.parser.CsvParser validateHeader
 INFO: Parsed header of CSV file, repo-config.csv, and recognized columns: Ignore Standalone Config,  Repository's Location,  Skip Ignored File Analysis,  Branch,  Shallow Cloning,  File formats,  Ignore Glob List,  Ignore Authors List,  Find Previous Authors,  File Size Limit,  Ignore File Size Limit,  Ignore Commits List
-Apr 10, 2025 6:51:22 AM reposense.parser.CsvParser validateHeader
+Jan 18, 2026 12:09:04 PM reposense.parser.CsvParser validateHeader
 INFO: Parsed header of CSV file, author-config.csv, and recognized columns: Author's Emails,  Repository's Location,  Branch,  Author's Git Host ID,  Author's Display Name,  Ignore Glob List,  Author's Git Author Name
-Apr 10, 2025 6:51:22 AM reposense.model.ConfigRunConfiguration getRepoConfigurations
+Jan 18, 2026 12:09:04 PM reposense.model.ConfigRunConfiguration getRepoConfigurations
 WARNING: No valid configurations in the author-config.csv.
 reposense.parser.exceptions.InvalidCsvException: No valid configurations in the author-config.csv.
-	at reposense.parser.CsvParser.parse(CsvParser.java:115)
-	at reposense.model.ConfigRunConfiguration.getRepoConfigurations(ConfigRunConfiguration.java:50)
-	at reposense.RepoSense.main(RepoSense.java:52)
+	at reposense.parser.CsvParser.parse(CsvParser.java:124)
+	at reposense.model.ConfigRunConfiguration.getRepoConfigurations(ConfigRunConfiguration.java:52)
+	at reposense.RepoSense.main(RepoSense.java:59)
 
-Apr 10, 2025 6:51:22 AM reposense.git.GitConfig getGlobalGitLfsConfig
+Jan 18, 2026 12:09:04 PM reposense.git.GitConfig getGlobalGitLfsConfig
 WARNING: Could not get global git lfs config
 java.lang.RuntimeException: reposense.system.CommandRunnerProcessException: Error returned from command git config --global --list on path . :
 fatal: unable to read config file '/home/runner/.gitconfig': No such file or directory
@@ -21,7 +26,7 @@ fatal: unable to read config file '/home/runner/.gitconfig': No such file or dir
 	at reposense.system.CommandRunner.runCommand(CommandRunner.java:23)
 	at reposense.git.GitConfig.getGitGlobalConfig(GitConfig.java:90)
 	at reposense.git.GitConfig.getGlobalGitLfsConfig(GitConfig.java:44)
-	at reposense.RepoSense.main(RepoSense.java:69)
+	at reposense.RepoSense.main(RepoSense.java:79)
 Caused by: reposense.system.CommandRunnerProcessException: Error returned from command git config --global --list on path . :
 fatal: unable to read config file '/home/runner/.gitconfig': No such file or directory
 
@@ -29,23 +34,27 @@ fatal: unable to read config file '/home/runner/.gitconfig': No such file or dir
 	at reposense.system.CommandRunner.runCommand(CommandRunner.java:21)
 	... 3 more
 
-Apr 10, 2025 6:51:22 AM reposense.report.RepoCloner spawnCloneProcess
-INFO: Cloning in parallel from https://github.com/reposense/RepoSense.git...
-Apr 10, 2025 6:51:22 AM reposense.report.RepoCloner waitForCloneProcess
-INFO: Waiting for cloning of https://github.com/reposense/RepoSense.git to complete...
-Apr 10, 2025 6:51:27 AM reposense.report.RepoCloner waitForCloneProcess
-INFO: Cloning of https://github.com/reposense/RepoSense.git completed!
-Apr 10, 2025 6:51:27 AM reposense.report.ReportGenerator analyzeRepos
-INFO: [1/1] Analyzing https://github.com/reposense/RepoSense.git (master)...
-Apr 10, 2025 6:51:27 AM reposense.authorship.FileInfoExtractor extractTextFileInfos
-INFO: Extracting relevant file info from https://github.com/reposense/RepoSense.git (master)...
-Apr 10, 2025 6:51:29 AM reposense.commits.CommitInfoExtractor extractCommitInfos
-INFO: Extracting commits info for https://github.com/reposense/RepoSense.git (master)...
-Apr 10, 2025 6:51:29 AM reposense.commits.CommitInfoAnalyzer analyzeCommits
-INFO: Analyzing commits info for https://github.com/reposense/RepoSense.git (master)...
-Apr 10, 2025 6:51:29 AM reposense.report.ReportGenerator analyzeRepo
-INFO: Analysis of https://github.com/reposense/RepoSense.git (master) completed!
-Apr 10, 2025 6:51:29 AM reposense.report.ReportGenerator generateReposReport
+Jan 18, 2026 12:09:04 PM reposense.report.RepoCloner spawnCloneProcess
+INFO: Cloning in parallel from https://github.com/wuliyq/pOpOp.git...
+Jan 18, 2026 12:09:04 PM reposense.report.RepoCloner waitForCloneProcess
+INFO: Waiting for cloning of https://github.com/wuliyq/pOpOp.git to complete...
+Jan 18, 2026 12:09:05 PM reposense.report.RepoCloner waitForCloneProcess
+INFO: Cloning of https://github.com/wuliyq/pOpOp.git completed!
+Jan 18, 2026 12:09:05 PM reposense.report.ReportGenerator analyzeRepos
+INFO: [1/1] Analyzing https://github.com/wuliyq/pOpOp.git (master)...
+Jan 18, 2026 12:09:05 PM reposense.report.ReportGenerator updateRepoConfig
+INFO: https://github.com/wuliyq/pOpOp.git (master) does not contain a standalone config file.
+Jan 18, 2026 12:09:05 PM reposense.report.ReportGenerator updateAuthorList
+INFO: https://github.com/wuliyq/pOpOp.git (master) has no authors specified, using all authors by default.
+Jan 18, 2026 12:09:05 PM reposense.authorship.FileInfoExtractor extractTextFileInfos
+INFO: Extracting relevant file info from https://github.com/wuliyq/pOpOp.git (master)...
+Jan 18, 2026 12:09:06 PM reposense.commits.CommitInfoExtractor extractCommitInfos
+INFO: Extracting commits info for https://github.com/wuliyq/pOpOp.git (master)...
+Jan 18, 2026 12:09:06 PM reposense.commits.CommitInfoAnalyzer analyzeCommits
+INFO: Analyzing commits info for https://github.com/wuliyq/pOpOp.git (master)...
+Jan 18, 2026 12:09:06 PM reposense.report.ReportGenerator analyzeRepo
+INFO: Analysis of https://github.com/wuliyq/pOpOp.git (master) completed!
+Jan 18, 2026 12:09:06 PM reposense.report.ReportGenerator generateReposReport
 INFO: The report is generated at /home/runner/work/publish-RepoSense/publish-RepoSense/reposense-report
-Apr 10, 2025 6:51:29 AM reposense.RepoSense main
-INFO: Elapsed processing time: 7.76 second(s)
+Jan 18, 2026 12:09:06 PM reposense.RepoSense main
+INFO: Elapsed processing time: 2.83 second(s)
