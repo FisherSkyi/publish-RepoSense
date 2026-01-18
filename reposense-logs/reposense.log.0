@@ -1,29 +1,24 @@
-Jan 18, 2026 12:41:57 PM reposense.system.LogsManager addFileHandler
+Jan 18, 2026 12:54:41 PM reposense.system.LogsManager addFileHandler
 INFO: Log temp folder has been successfully created
-Jan 18, 2026 12:41:57 PM reposense.parser.ArgsParser parse
+Jan 18, 2026 12:54:41 PM reposense.parser.ArgsParser parse
 INFO: Config path not provided, using the config folder as default.
-Jan 18, 2026 12:41:57 PM reposense.parser.ReportConfigYamlParser parse
+Jan 18, 2026 12:54:41 PM reposense.parser.ReportConfigYamlParser parse
 INFO: Parsing report-config.yaml file...
-Jan 18, 2026 12:41:57 PM reposense.parser.ArgsParser addReportConfigToBuilder
+Jan 18, 2026 12:54:42 PM reposense.parser.ArgsParser addReportConfigToBuilder
 WARNING: Error parsing report-config.yaml: /home/runner/work/publish-RepoSense/publish-RepoSense/config/report-config.yaml (No such file or directory)
 /home/runner/work/publish-RepoSense/publish-RepoSense/config/report-config.yaml Ignoring the report config provided.
-Jan 18, 2026 12:41:57 PM reposense.parser.BlurbMarkdownParser parse
+Jan 18, 2026 12:54:42 PM reposense.parser.BlurbMarkdownParser parse
 INFO: Parsing blurbs...
-Jan 18, 2026 12:41:57 PM reposense.parser.BlurbMarkdownParser parse
+Jan 18, 2026 12:54:42 PM reposense.parser.BlurbMarkdownParser parse
 INFO: Blurbs parsed successfully!
-Jan 18, 2026 12:41:57 PM reposense.parser.CsvParser validateHeader
+Jan 18, 2026 12:54:42 PM reposense.parser.CsvParser validateHeader
 INFO: Parsed header of CSV file, repo-config.csv, and recognized columns: Ignore Standalone Config,  Repository's Location,  Ignore Glob List,  File Size Limit,  Ignore File Size Limit,  Ignore Commits List,  Skip Ignored File Analysis,  Branch,  Shallow Cloning,  File formats,  Ignore Authors List,  Find Previous Authors,  Since Date,  Until Date
-Jan 18, 2026 12:41:57 PM reposense.parser.CsvParser parse
-WARNING: Error configuring dates of line 2 in CSV file, repo-config.csv.
-Contents: https://github.com/wuliyq/pOpOp.git,master,,,,,,,,,,,2026/01/17,2026/01/18
-Error: The format for since date and until date should be dd/MM/yyyy
-Jan 18, 2026 12:41:57 PM reposense.parser.CsvParser isLineMalformed
-WARNING: Line 3 in CSV file, repo-config.csv, is malformed.
-Content: ,,,,,,,,,,,,,
-Jan 18, 2026 12:41:57 PM reposense.RepoSense main
-WARNING: No valid configurations in the repo-config.csv.
-reposense.parser.exceptions.InvalidCsvException: No valid configurations in the repo-config.csv.
-	at reposense.parser.CsvParser.parse(CsvParser.java:124)
-	at reposense.model.ConfigRunConfiguration.getRepoConfigurations(ConfigRunConfiguration.java:42)
+Jan 18, 2026 12:54:42 PM reposense.RepoSense main
+WARNING: Unknown column(s) found: " Author's Emails", " Author's Display Name" (/home/runner/work/publish-RepoSense/publish-RepoSense/config/author-config.csv)
+reposense.parser.exceptions.InvalidHeaderException: Unknown column(s) found: " Author's Emails", " Author's Display Name" (/home/runner/work/publish-RepoSense/publish-RepoSense/config/author-config.csv)
+	at reposense.parser.CsvParser.validateHeader(CsvParser.java:305)
+	at reposense.parser.CsvParser.getHeader(CsvParser.java:151)
+	at reposense.parser.CsvParser.parse(CsvParser.java:94)
+	at reposense.model.ConfigRunConfiguration.getRepoConfigurations(ConfigRunConfiguration.java:52)
 	at reposense.RepoSense.main(RepoSense.java:59)
 
