@@ -1,28 +1,28 @@
-Feb 04, 2026 10:45:24 AM reposense.system.LogsManager addFileHandler
+Feb 04, 2026 11:37:13 AM reposense.system.LogsManager addFileHandler
 INFO: Log temp folder has been successfully created
-Feb 04, 2026 10:45:24 AM reposense.parser.ArgsParser parse
+Feb 04, 2026 11:37:13 AM reposense.parser.ArgsParser parse
 INFO: Config path not provided, using the config folder as default.
-Feb 04, 2026 10:45:24 AM reposense.parser.ReportConfigYamlParser parse
+Feb 04, 2026 11:37:13 AM reposense.parser.ReportConfigYamlParser parse
 INFO: Parsing report-config.yaml file...
-Feb 04, 2026 10:45:24 AM reposense.parser.ArgsParser addReportConfigToBuilder
+Feb 04, 2026 11:37:13 AM reposense.parser.ArgsParser addReportConfigToBuilder
 WARNING: Error parsing report-config.yaml: /home/runner/work/publish-RepoSense/publish-RepoSense/config/report-config.yaml (No such file or directory)
 /home/runner/work/publish-RepoSense/publish-RepoSense/config/report-config.yaml Ignoring the report config provided.
-Feb 04, 2026 10:45:24 AM reposense.parser.BlurbMarkdownParser parse
+Feb 04, 2026 11:37:13 AM reposense.parser.BlurbMarkdownParser parse
 INFO: Parsing blurbs...
-Feb 04, 2026 10:45:24 AM reposense.parser.BlurbMarkdownParser parse
+Feb 04, 2026 11:37:13 AM reposense.parser.BlurbMarkdownParser parse
 INFO: Blurbs parsed successfully!
-Feb 04, 2026 10:45:24 AM reposense.parser.CsvParser validateHeader
+Feb 04, 2026 11:37:13 AM reposense.parser.CsvParser validateHeader
 INFO: Parsed header of CSV file, repo-config.csv, and recognized columns: Ignore Standalone Config,  Repository's Location,  Ignore Glob List,  File Size Limit,  Ignore File Size Limit,  Ignore Commits List,  Skip Ignored File Analysis,  Branch,  Shallow Cloning,  File formats,  Ignore Authors List,  Find Previous Authors,  Since Date,  Until Date
-Feb 04, 2026 10:45:24 AM reposense.parser.CsvParser validateHeader
+Feb 04, 2026 11:37:14 AM reposense.parser.CsvParser validateHeader
 INFO: Parsed header of CSV file, author-config.csv, and recognized columns: Author's Emails,  Repository's Location,  Branch,  Author's Git Host ID,  Author's Display Name,  Ignore Glob List,  Author's Git Author Name
-Feb 04, 2026 10:45:24 AM reposense.model.ConfigRunConfiguration getRepoConfigurations
+Feb 04, 2026 11:37:14 AM reposense.model.ConfigRunConfiguration getRepoConfigurations
 WARNING: No valid configurations in the author-config.csv.
 reposense.parser.exceptions.InvalidCsvException: No valid configurations in the author-config.csv.
 	at reposense.parser.CsvParser.parse(CsvParser.java:124)
 	at reposense.model.ConfigRunConfiguration.getRepoConfigurations(ConfigRunConfiguration.java:52)
 	at reposense.RepoSense.main(RepoSense.java:59)
 
-Feb 04, 2026 10:45:24 AM reposense.git.GitConfig getGlobalGitLfsConfig
+Feb 04, 2026 11:37:14 AM reposense.git.GitConfig getGlobalGitLfsConfig
 WARNING: Could not get global git lfs config
 java.lang.RuntimeException: reposense.system.CommandRunnerProcessException: Error returned from command git config --global --list on path . :
 fatal: unable to read config file '/home/runner/.gitconfig': No such file or directory
@@ -38,29 +38,29 @@ fatal: unable to read config file '/home/runner/.gitconfig': No such file or dir
 	at reposense.system.CommandRunner.runCommand(CommandRunner.java:21)
 	... 3 more
 
-Feb 04, 2026 10:45:24 AM reposense.report.RepoCloner spawnCloneProcess
+Feb 04, 2026 11:37:14 AM reposense.report.RepoCloner spawnCloneProcess
 INFO: Cloning in parallel from https://github.com/AY2526S1-CS2103T-W11-1/tp.git...
-Feb 04, 2026 10:45:24 AM reposense.report.RepoCloner waitForCloneProcess
+Feb 04, 2026 11:37:14 AM reposense.report.RepoCloner waitForCloneProcess
 INFO: Waiting for cloning of https://github.com/AY2526S1-CS2103T-W11-1/tp.git to complete...
-Feb 04, 2026 10:45:25 AM reposense.report.RepoCloner waitForCloneProcess
+Feb 04, 2026 11:37:16 AM reposense.report.RepoCloner waitForCloneProcess
 INFO: Cloning of https://github.com/AY2526S1-CS2103T-W11-1/tp.git completed!
-Feb 04, 2026 10:45:25 AM reposense.report.ReportGenerator analyzeRepos
+Feb 04, 2026 11:37:16 AM reposense.report.ReportGenerator analyzeRepos
 INFO: [1/1] Analyzing https://github.com/AY2526S1-CS2103T-W11-1/tp.git (master)...
-Feb 04, 2026 10:45:25 AM reposense.report.ReportGenerator updateRepoConfig
+Feb 04, 2026 11:37:16 AM reposense.report.ReportGenerator updateRepoConfig
 INFO: https://github.com/AY2526S1-CS2103T-W11-1/tp.git (master) does not contain a standalone config file.
-Feb 04, 2026 10:45:25 AM reposense.report.ReportGenerator updateAuthorList
+Feb 04, 2026 11:37:16 AM reposense.report.ReportGenerator updateAuthorList
 INFO: https://github.com/AY2526S1-CS2103T-W11-1/tp.git (master) has no authors specified, using all authors by default.
-Feb 04, 2026 10:45:26 AM reposense.model.AuthorConfiguration checkDuplicateAliases
+Feb 04, 2026 11:37:16 AM reposense.model.AuthorConfiguration checkDuplicateAliases
 WARNING: Duplicate alias junrong found. The alias will belong to the last author - junrong
-Feb 04, 2026 10:45:26 AM reposense.authorship.FileInfoExtractor extractTextFileInfos
+Feb 04, 2026 11:37:16 AM reposense.authorship.FileInfoExtractor extractTextFileInfos
 INFO: Extracting relevant file info from https://github.com/AY2526S1-CS2103T-W11-1/tp.git (master)...
-Feb 04, 2026 10:45:28 AM reposense.commits.CommitInfoExtractor extractCommitInfos
+Feb 04, 2026 11:37:19 AM reposense.commits.CommitInfoExtractor extractCommitInfos
 INFO: Extracting commits info for https://github.com/AY2526S1-CS2103T-W11-1/tp.git (master)...
-Feb 04, 2026 10:45:29 AM reposense.commits.CommitInfoAnalyzer analyzeCommits
+Feb 04, 2026 11:37:20 AM reposense.commits.CommitInfoAnalyzer analyzeCommits
 INFO: Analyzing commits info for https://github.com/AY2526S1-CS2103T-W11-1/tp.git (master)...
-Feb 04, 2026 10:45:29 AM reposense.report.ReportGenerator analyzeRepo
+Feb 04, 2026 11:37:20 AM reposense.report.ReportGenerator analyzeRepo
 INFO: Analysis of https://github.com/AY2526S1-CS2103T-W11-1/tp.git (master) completed!
-Feb 04, 2026 10:45:29 AM reposense.report.ReportGenerator generateReposReport
+Feb 04, 2026 11:37:20 AM reposense.report.ReportGenerator generateReposReport
 INFO: The report is generated at /home/runner/work/publish-RepoSense/publish-RepoSense/reposense-report
-Feb 04, 2026 10:45:29 AM reposense.RepoSense main
-INFO: Elapsed processing time: 5.58 second(s)
+Feb 04, 2026 11:37:20 AM reposense.RepoSense main
+INFO: Elapsed processing time: 7.17 second(s)
